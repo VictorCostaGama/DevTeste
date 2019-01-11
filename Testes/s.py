@@ -17,9 +17,7 @@ def coletaDados(url):
                 li.append(tab[i])
 
         #Removendo lixo da lista e estrurando
-        del(li[0:9])
-        if li[0] == 'Resultado da Adjudicação':
-            del(li[0])
+        del(li[0:6])
 
         for x in range(0,2):
             del(li[-1])
