@@ -17,7 +17,7 @@ def coletaDados(url):
                 li.append(tab[i])
 
         #Removendo lixo da lista e estrurando
-        del(li[0:4])
+        del(li[0:2])
 
         for x in range(0,2):
             del(li[-1])
