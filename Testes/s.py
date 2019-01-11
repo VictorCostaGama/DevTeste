@@ -17,17 +17,18 @@ def coletaDados(url):
                 li.append(tab[i])
 
         #Removendo lixo da lista e estrurando
-        del(li[0:10])
+        del(li[0:9])
+        if li[0] == 'Resultado da Adjudicação':
+            del(li[0])
 
         for x in range(0,2):
             del(li[-1])
 
         a = li.count('e a quantidade de')
 
-        for j in range(0, a):
-            while (j < a):
-                b = li.index('e a quantidade de')
-                del(li[b:b+4])
+        for b in range(0, a):
+            b = li.index('e a quantidade de')
+            del(li[b:b+4])
 
         for x in range(0,len(li)):
             if 'Fornecedor' in li[x]:
