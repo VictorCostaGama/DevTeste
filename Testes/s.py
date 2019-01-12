@@ -1,11 +1,13 @@
 import requests, scrapy
 
 def coletaDados(url):
-    
-    response = requests.get(url)
-    sel = scrapy.selector
-    select = sel.Selector(response)
-    li = []
+    try:
+        response = requests.get(url)
+        sel = scrapy.selector
+        select = sel.Selector(response)
+        li = []
+    except:
+        pass
     try:
         tab = select.xpath('//tr//td//text()').extract()
     
@@ -17,7 +19,6 @@ def coletaDados(url):
                 li.append(tab[i])
 
         #Removendo lixo da lista e estrurando
-        del(li[0:2])
 
         for x in range(0,2):
             del(li[-1])
