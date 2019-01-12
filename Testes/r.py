@@ -19,8 +19,7 @@ if __name__ == "__main__":
     arquivo = '/Users/JOSÉVICTORTEIXEIRADA/Documents/Projetos/DevTeste/Testes/Pregao_UASG.xls'
     ld = xls_parser(arquivo)
     url = 'http://comprasnet.gov.br/livre/pregao/termojulg.asp?prgcod=342018&Acao=A&co_no_uasg=70027'
-    lg = []
     for i in range(0,len(ld)):
         aux = url.replace('prgcod=342018', 'prgcod='+ld[i]['prgcod']).replace('co_no_uasg=70027', 'co_no_uasg='+ld[i]['co_no_uasg'])
-        lg.append(aux)
+        print(aux)
         print(coletaDados(aux))
